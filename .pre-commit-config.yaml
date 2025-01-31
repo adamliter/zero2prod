@@ -1,0 +1,30 @@
+# -*- mode: yaml; coding: utf-8; fill-column: 80; -*-
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: cargo-fmt
+        name: cargo-fmt
+        language: system
+        entry: cargo fmt
+        types: [rust]
+        args: ["--"]
+      - id: cargo-check
+        name: cargo-check
+        entry: cargo check
+        language: system
+        types: [rust]
+        pass_filenames: false
+      - id: cargo-clippy
+        name: cargo-clippy
+        entry: cargo clippy
+        language: system
+        args: ["--", "-D", "warnings"]
+        types: [rust]
+        pass_filenames: false
