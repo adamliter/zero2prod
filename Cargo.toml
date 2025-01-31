@@ -1,0 +1,10 @@
+# -*- mode: conf-toml; coding: utf-8; fill-column: 80; -*-
+[package]
+name = "zero2prod"
+version = "0.1.0"
+authors = ["Adam Liter <io@adamliter.org>"]
+edition = "2021"
+
+[dependencies]
+actix-web = "4.9.0"
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
