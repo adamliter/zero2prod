@@ -3,11 +3,11 @@ mod common;
 
 #[tokio::test]
 async fn healthz_works() {
-    let address = common::spawn_app();
+    let app = common::spawn_app().await;
     let client = reqwest::Client::new();
 
     let response = client
-        .get(&format!("{}/healthz", &address))
+        .get(&format!("{}/healthz", &app.address))
         .send()
         .await
         .expect("Failed to execute request.");

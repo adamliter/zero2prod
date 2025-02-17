@@ -1,0 +1,9 @@
+# -*- mode: yaml; coding: utf-8; fill-column: 80; -*-
+---
+application_port: 8000
+database:
+  host: "127.0.0.1"
+  port: 5432
+  username: "postgres"
+  password: "password"
+  database_name: "newsletter"
